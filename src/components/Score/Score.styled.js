@@ -1,33 +1,66 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
-const ScoreContainerStyled = styled.div`
+
+const TeamNameAndScoreContainerStyled = styled.div `
     width: 100%;
-    height:41px;
-    color: #000;
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+`
+
+const TeamNameContainerStyled = styled.div `
+    width: 100%;
     display: flex;
     align-items: center;
 `
 
-const ScoreHomeStyled = styled.span`
+const ScoreContainerStyled = styled.div `
+    width: 100%;
+    display: flex;
+    align-items: center;
+`
+
+const TeamHomeStyled = styled.span `
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+    flex-shrink:0;
+    flex-grow:1;
+    min-width:1px;
+    flex-basis: calc(50% - 17px);
+`
+
+const TeamAwayStyled = styled.span `
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    flex-shrink:0;
+    flex-grow:1;
+    min-width:1px;
+    flex-basis: calc(50% - 17px);
+`
+
+const ScoreHomeStyled = styled.span `
     font-size: 32px;
     font-weight: bold;
     text-align: right;
     flex-shrink:0;
     flex-grow:1;
     min-width:1px;
+    flex-basis: calc(50% - 17px);
 `
 
-const ScoreAwayStyled = styled.span`
+const ScoreAwayStyled = styled.span `
     font-size: 32px;
     font-weight: bold;
     text-align: left;
     flex-shrink:0;
     flex-grow:1;
     min-width:1px;
-
+    flex-basis: calc(50% - 17px);
 `
 
-const ScoreSeparatorStyled = styled.span`
+const ScoreSeparatorStyled = styled.span `
     font-size: 32px;
     font-weight: bold;
     width: 36px;
@@ -36,4 +69,13 @@ const ScoreSeparatorStyled = styled.span`
 `
 
 
-export {ScoreContainerStyled, ScoreSeparatorStyled, ScoreAwayStyled, ScoreHomeStyled};
+export {
+    TeamNameAndScoreContainerStyled,
+    ScoreContainerStyled,
+    TeamNameContainerStyled,
+    ScoreSeparatorStyled,
+    ScoreAwayStyled,
+    ScoreHomeStyled,
+    TeamHomeStyled,
+    TeamAwayStyled
+};

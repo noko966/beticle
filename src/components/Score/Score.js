@@ -1,13 +1,21 @@
 import React from 'react';
-import {ScoreContainerStyled, ScoreSeparatorStyled, ScoreHomeStyled,ScoreAwayStyled} from './Score.styled';
+import {TeamNameAndScoreContainerStyled, ScoreContainerStyled, TeamNameContainerStyled, TeamHomeStyled, TeamAwayStyled, ScoreSeparatorStyled, ScoreHomeStyled,ScoreAwayStyled} from './Score.styled';
+import {Flex} from '../Flex';
 
-const Score = ({HT, AT}) =>{
+const Score = ({HT, AT, scoreHT, scoreAT}) =>{
     return (
-        <ScoreContainerStyled>
-            <ScoreHomeStyled>{HT}</ScoreHomeStyled>
-            <ScoreSeparatorStyled>:</ScoreSeparatorStyled>
-            <ScoreAwayStyled>{AT}</ScoreAwayStyled>
-        </ScoreContainerStyled>
+        <TeamNameAndScoreContainerStyled>
+            <TeamNameContainerStyled>
+                <TeamHomeStyled>{HT}</TeamHomeStyled>
+                <ScoreSeparatorStyled></ScoreSeparatorStyled>
+                <TeamAwayStyled>{AT}</TeamAwayStyled>
+            </TeamNameContainerStyled>
+            <ScoreContainerStyled>
+                <ScoreHomeStyled>{scoreHT}</ScoreHomeStyled>
+                <ScoreSeparatorStyled>:</ScoreSeparatorStyled>
+                <ScoreAwayStyled>{scoreAT}</ScoreAwayStyled>
+            </ScoreContainerStyled>
+        </TeamNameAndScoreContainerStyled>
     )
 }
 

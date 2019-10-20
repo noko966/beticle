@@ -4,7 +4,7 @@ const OddContainerStyled = styled.div`
     width: 82px;
     height:58px;
     border-radius: 5px;
-    background-color: #6c9d3a;
+    background-color: ${p=> p.type === 'buy' ? '#6c9d3a' : '#0264fb'} ;
     color: #1f2022;
     display: flex;
     flex-direction: column;
