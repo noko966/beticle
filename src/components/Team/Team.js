@@ -1,10 +1,8 @@
-import React from 'react';
-import {TeamStyled} from './Team.styled';
+import React from "react";
+import { TeamStyled } from "./Team.styled";
 
-const Team = ({teamName, type}) =>{
-    return (
-        <TeamStyled type={type}>{teamName}</TeamStyled>
-    )
-}
+const Team = ({ teamName, type }) => {
+  return <TeamStyled type={type}>{teamName}</TeamStyled>;
+};
 
-export {Team};
+export { Team };

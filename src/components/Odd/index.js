@@ -1,1 +1,1 @@
-export {Odd} from './Odd';
+export { Odd } from "./Odd";
