@@ -5,6 +5,8 @@ const LayoutStyled = styled.div`
   color: ${p => p.color || p.theme.Layout.color};
   width: ${p => p.width || p.theme.Layout.width};
   height: ${p => p.height || p.theme.Layout.height};
+  display:flex;
+
 `;
 const LeftMenuContainerStyled = styled.div`
   background-color: ${p => p.bg || p.theme.LayoutLeft.bg};

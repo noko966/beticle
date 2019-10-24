@@ -1,16 +1,16 @@
 import React from "react";
 import {
   CompetionContainerStyled,
-  CompetionFooterStyled,
   CompetionNameStyled,
-  CompetionContentStyled,
   CompetionTypeStyled,
-  CompetitionTeamsContainerStyled,
   CompetitionOddsGroupStyled,
-  CompetitionOddsGroupContainerStyled
+  CompetitionSeparator,
+  CompetitionStatus,
+  CompetitionMarketCap
 } from "./Competition.styled";
 import { Score } from "../Score";
 import { OddGroup } from "../OddGroup";
+import { Flex } from "@rebass/grid";
 
 const Competition = ({
   name,
@@ -22,26 +22,38 @@ const Competition = ({
   oddsBuyName,
   oddsBuy,
   oddsSellName,
-  oddsSell
+  oddsSell,
+  status,
+  marketCup
 }) => {
   return (
     <CompetionContainerStyled>
-      <CompetionNameStyled>{name}</CompetionNameStyled>
-      <CompetionTypeStyled>{type}</CompetionTypeStyled>
-      <CompetionContentStyled>
-        <CompetitionTeamsContainerStyled>
+      <Flex>
+        <Flex width={1 / 2}>
+          <CompetionNameStyled>{name}</CompetionNameStyled>
+        </Flex>
+        <Flex width={1 / 2}>
+          <CompetionTypeStyled>{type}</CompetionTypeStyled>
+        </Flex>
+      </Flex>
+      <Flex>
+        <Flex>
           <Score HT={HT} AT={AT} scoreHT={scoreHT} scoreAT={scoreAT} />
-        </CompetitionTeamsContainerStyled>
-        <CompetitionOddsGroupContainerStyled>
+          <CompetitionSeparator />
+          <Flex>
+            <CompetitionStatus>{status}</CompetitionStatus>
+            <CompetitionMarketCap>{marketCup}</CompetitionMarketCap>
+          </Flex>
+        </Flex>
+        <Flex>
           <CompetitionOddsGroupStyled>
             <OddGroup name={oddsBuyName} odds={oddsBuy} />
           </CompetitionOddsGroupStyled>
           <CompetitionOddsGroupStyled>
             <OddGroup name={oddsSellName} odds={oddsSell} />
           </CompetitionOddsGroupStyled>
-        </CompetitionOddsGroupContainerStyled>
-      </CompetionContentStyled>
-      <CompetionFooterStyled></CompetionFooterStyled>
+        </Flex>
+      </Flex>
     </CompetionContainerStyled>
   );
 };

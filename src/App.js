@@ -31,6 +31,8 @@ import { SidebarItem } from "./components/SidebarItem";
 
 import { Badge } from "./components/Badge";
 
+import { RightMenuItem } from "./components/RightMenuItem";
+
 import { Text } from "./components/Text";
 
 import { Competition } from "./components/Competition";
@@ -54,8 +56,54 @@ class App extends Component {
           </LeftMenuContainerStyled>
           <MidMenuContainerStyled>
             <Badge text="text" />
+            <Competition
+              name="COMPETITION NAME"
+              type="TRADING"
+              scoreHT={10}
+              scoreAT={5}
+              HT="home team"
+              AT="home team"
+              marketCup="Market  Cap: 500$"
+              status="Live"
+              oddsBuy={[
+                { price: 10, factor: 20, type: "buy" },
+                { price: 10, factor: 20, type: "buy" }
+              ]}
+              oddsBuyName="NAME OF THE HOME TEAM
+SECOND PART "
+              oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
+              oddsSellName="NAME OF THE HOME TEAM SECOND PART "></Competition>
           </MidMenuContainerStyled>
-          <RightMenuContainerStyled></RightMenuContainerStyled>
+          <RightMenuContainerStyled>
+            <RightMenuItem
+              competition="competition name"
+              type="buy"
+              winner="Manchester City"
+              itemCount="10"
+              ammount="200"
+            />
+            <RightMenuItem
+              competition="competition name"
+              type="buy"
+              winner="Manchester City"
+              itemCount="10"
+              ammount="200"
+            />
+            <RightMenuItem
+              competition="competition name"
+              type="buy"
+              winner="Manchester City"
+              itemCount="10"
+              ammount="200"
+            />
+            <RightMenuItem
+              competition="competition name"
+              type="buy"
+              winner="Manchester City"
+              itemCount="10"
+              ammount="200"
+            />
+          </RightMenuContainerStyled>
         </LayoutStyled>
 
         {/* <Competition

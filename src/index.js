@@ -5,12 +5,12 @@ import { ThemeProvider } from "styled-components";
 
 const Theme = {
   SidebarItem: {
-    height: "40px",
+    height: "62px",
     bg: "#333",
-    color: "#999",
+    color: "#9b9b9b",
     bgHover: "#444",
     colorHover: "#fff",
-    spacing: "16px"
+    spacing: "38px"
   },
   Badge: {
     height: "40px",
@@ -22,12 +22,12 @@ const Theme = {
     spacing: "16px"
   },
   SidebarItemNested: {
-    height: "40px",
-    bg: "#222",
-    color: "#999",
+    height: "62px",
+    bg: "#d8d8d8",
+    color: "#9b9b9b",
     bgHover: "#252525",
     colorHover: "#fff",
-    spacing: "16px"
+    spacing: "38px"
   },
   Layout: {
     width: "100%",
@@ -50,11 +50,17 @@ const Theme = {
     spacing: "16px"
   },
   LayoutRight: {
-    width: "250px",
+    width: "420px",
     height: "100%",
     bg: "#1a1a1a",
     color: "#fff",
     spacing: "16px"
+  },
+  Spacing: {
+    xs: '4px',
+    s: '8px',
+    m: '16px',
+    l: '24px',
   }
 };
 
