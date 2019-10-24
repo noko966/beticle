@@ -28,24 +28,28 @@ const Competition = ({
 }) => {
   return (
     <CompetionContainerStyled>
-      <Flex>
+      <Flex alignItems='center' mb='8px'>
         <Flex width={1 / 2}>
           <CompetionNameStyled>{name}</CompetionNameStyled>
         </Flex>
-        <Flex width={1 / 2}>
+        <Flex width={1 / 2} justifyContent="flex-end">
           <CompetionTypeStyled>{type}</CompetionTypeStyled>
         </Flex>
       </Flex>
       <Flex>
-        <Flex>
+        <Flex flex="1 1 auto" flexDirection="column">
           <Score HT={HT} AT={AT} scoreHT={scoreHT} scoreAT={scoreAT} />
           <CompetitionSeparator />
           <Flex>
-            <CompetitionStatus>{status}</CompetitionStatus>
-            <CompetitionMarketCap>{marketCup}</CompetitionMarketCap>
+            <Flex width={1 / 2} justifyContent="flex-end">
+              <CompetitionStatus>{status}</CompetitionStatus>
+            </Flex>
+            <Flex width={1 / 2} justifyContent="flex-end">
+              <CompetitionMarketCap>{marketCup}</CompetitionMarketCap>
+            </Flex>
           </Flex>
         </Flex>
-        <Flex>
+        <Flex flex="0 1 auto">
           <CompetitionOddsGroupStyled>
             <OddGroup name={oddsBuyName} odds={oddsBuy} />
           </CompetitionOddsGroupStyled>

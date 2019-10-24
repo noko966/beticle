@@ -17,6 +17,7 @@ const LeftMenuContainerStyled = styled.div`
 const MidMenuContainerStyled = styled.div`
   flex-grow: 1;
   min-width: 1px;
+  padding: 0 15px;
 `;
 const RightMenuContainerStyled = styled.div`
   background-color: ${p => p.bg || p.theme.LayoutRight.bg};

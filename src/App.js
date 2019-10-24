@@ -55,7 +55,6 @@ class App extends Component {
             </Sidebar>
           </LeftMenuContainerStyled>
           <MidMenuContainerStyled>
-            <Badge text="text" />
             <Competition
               name="COMPETITION NAME"
               type="TRADING"
@@ -72,7 +71,26 @@ class App extends Component {
               oddsBuyName="NAME OF THE HOME TEAM
 SECOND PART "
               oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
-              oddsSellName="NAME OF THE HOME TEAM SECOND PART "></Competition>
+              oddsSellName="NAME OF THE HOME TEAM SECOND PART "
+            />
+            <Competition
+              name="COMPETITION NAME"
+              type="TRADING"
+              scoreHT={10}
+              scoreAT={5}
+              HT="home team"
+              AT="home team"
+              marketCup="Market  Cap: 500$"
+              status="Live"
+              oddsBuy={[
+                { price: 10, factor: 20, type: "buy" },
+                { price: 10, factor: 20, type: "buy" }
+              ]}
+              oddsBuyName="NAME OF THE HOME TEAM
+SECOND PART "
+              oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
+              oddsSellName="NAME OF THE HOME TEAM SECOND PART "
+            />
           </MidMenuContainerStyled>
           <RightMenuContainerStyled>
             <RightMenuItem

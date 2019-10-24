@@ -3,7 +3,6 @@ import styled from "styled-components";
 const CompetionNameStyled = styled.h3`
   font-size: 15px;
   font-weight: bold;
-  padding-top: 8px;
 `;
 
 const CompetionTypeStyled = styled.h4`
@@ -24,6 +23,7 @@ const CompetionContainerStyled = styled.div`
   background-color: #1f2022;
   border-radius: 5px;
   position: relative;
+  margin-bottom: 15px;
 
 `;
 
