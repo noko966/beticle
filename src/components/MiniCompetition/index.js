@@ -1,0 +1,1 @@
+export { MiniCompetition } from "./MiniCompetition";

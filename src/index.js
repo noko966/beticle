@@ -4,6 +4,7 @@ import App from "./App";
 import { ThemeProvider } from "styled-components";
 
 const Theme = {
+  space: [ 0, 6, 12, 24, 32 ],
   SidebarItem: {
     height: "62px",
     bg: "#333",

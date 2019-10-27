@@ -18,8 +18,8 @@ const Height = p => {
 };
 
 const ButtonStyled = styled.button`
-  background-color: #0264fb;
-  color: #fff;
+  background-color: ${p => p.bg || '#0264fb'};
+  color: ${p => p.color || '#fff'};
   border-radius: 5px;
   appearance: none;
   ${p => Height(p)}

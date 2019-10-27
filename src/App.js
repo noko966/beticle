@@ -15,13 +15,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 //components
-import {
-  LayoutStyled,
-  LeftMenuContainerStyled,
-  MidMenuContainerStyled,
-  RightMenuContainerStyled
-} from "./components/Layout/Layout.styled";
-
+import { Flex, Box } from "@rebass/grid";
 import { Odd } from "./components/Odd";
 import { Score } from "./components/Score";
 import { Team } from "./components/Team";
@@ -32,18 +26,20 @@ import { SidebarItem } from "./components/SidebarItem";
 import { Badge } from "./components/Badge";
 
 import { RightMenuItem } from "./components/RightMenuItem";
+import { SellBuy } from "./components/SellBuy";
 
 import { Text } from "./components/Text";
 
 import { Competition } from "./components/Competition";
+import { MiniCompetition } from "./components/MiniCompetition";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <GlobalStyles />
-        <LayoutStyled>
-          <LeftMenuContainerStyled>
+        <Flex width={1}>
+          <Box width="390px">
             <Sidebar>
               <SidebarItem>text</SidebarItem>
               <SidebarItem nested={true}>text</SidebarItem>
@@ -53,8 +49,40 @@ class App extends Component {
               <SidebarItem>text</SidebarItem>
               <SidebarItem>text</SidebarItem>
             </Sidebar>
-          </LeftMenuContainerStyled>
-          <MidMenuContainerStyled>
+          </Box>
+          <Box px={2} flex="1 0 auto">
+            <Flex mb={2}>
+              <Box width={1 / 2}>
+                <MiniCompetition
+                  type="buy"
+                  subName="subName"
+                  name="Competition name"
+                  HTName="home team name"
+                  ATName="away team name"
+                  HTPercentage="10%"
+                  HTFactor="10"
+                  ATPercentage="20%"
+                  ATFactor="20"
+                  deltaUp={true}
+                />
+              </Box>
+              <Box width="15px"></Box>
+              <Box width={1 / 2}>
+                <MiniCompetition
+                  type="buy"
+                  subName="subName"
+                  name="Competition name"
+                  HTName="home team name"
+                  ATName="away team name"
+                  HTPercentage="10%"
+                  HTFactor="10"
+                  ATPercentage="20%"
+                  ATFactor="20"
+                  deltaUp={true}
+                />
+              </Box>
+            </Flex>
+
             <Competition
               name="COMPETITION NAME"
               type="TRADING"
@@ -89,10 +117,11 @@ SECOND PART "
               oddsBuyName="NAME OF THE HOME TEAM
 SECOND PART "
               oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
-              oddsSellName="NAME OF THE HOME TEAM SECOND PART "
-            />
-          </MidMenuContainerStyled>
-          <RightMenuContainerStyled>
+              oddsSellName="NAME OF THE HOME TEAM SECOND PART ">
+              <SellBuy />
+            </Competition>
+          </Box>
+          <Box width="420px">
             <RightMenuItem
               competition="competition name"
               type="buy"
@@ -100,49 +129,8 @@ SECOND PART "
               itemCount="10"
               ammount="200"
             />
-            <RightMenuItem
-              competition="competition name"
-              type="buy"
-              winner="Manchester City"
-              itemCount="10"
-              ammount="200"
-            />
-            <RightMenuItem
-              competition="competition name"
-              type="buy"
-              winner="Manchester City"
-              itemCount="10"
-              ammount="200"
-            />
-            <RightMenuItem
-              competition="competition name"
-              type="buy"
-              winner="Manchester City"
-              itemCount="10"
-              ammount="200"
-            />
-          </RightMenuContainerStyled>
-        </LayoutStyled>
-
-        {/* <Competition
-          name="COMPETITION NAME"
-          type="TRADING"
-          scoreHT={10}
-          scoreAT={5}
-          HT="home team"
-          AT="home team"
-          oddsBuy={[
-            { price: 10, factor: 20, type: "buy" },
-            { price: 10, factor: 20, type: "buy" }
-          ]}
-          oddsBuyName="NAME OF THE HOME TEAM
-SECOND PART "
-          oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
-          oddsSellName="NAME OF THE HOME TEAM SECOND PART "
-        ></Competition>
-
-        <Button size="large" />
-        <Button size="small" /> */}
+          </Box>
+        </Flex>
       </div>
     );
   }

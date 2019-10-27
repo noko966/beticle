@@ -24,7 +24,8 @@ const Competition = ({
   oddsSellName,
   oddsSell,
   status,
-  marketCup
+  marketCup,
+  children
 }) => {
   return (
     <CompetionContainerStyled>
@@ -58,6 +59,7 @@ const Competition = ({
           </CompetitionOddsGroupStyled>
         </Flex>
       </Flex>
+      {children}
     </CompetionContainerStyled>
   );
 };
