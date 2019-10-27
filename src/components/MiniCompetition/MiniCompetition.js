@@ -10,6 +10,7 @@ import {
   MiniCompetitionArrowStyled
 } from "./MiniCompetition.styled";
 import { Flex, Box } from "@rebass/grid";
+import {Separator} from '../Separator'
 
 const MiniCompetition = ({
   type,
@@ -69,6 +70,7 @@ const MiniCompetition = ({
           </Flex>
         </Box>
       </Flex>
+      <Separator/>
     </MiniCompetitionStyled>
   );
 };
