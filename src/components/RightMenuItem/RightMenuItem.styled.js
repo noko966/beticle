@@ -8,16 +8,10 @@ const RightMenuItemContainerStyled = styled.div`
   flex-direction: column;
 `;
 
-const RightMenuItemHeaderSeparatorStyled = styled.div`
-  background-color: #4a4a4a;
-  height: 1px;
-  width:100%;
-`;
-
 const RightMenuItemFooterSeparatorStyled = styled.div`
   background-color: #0264fb;
   height: 2px;
-  width:100%;
+  width: 100%;
 `;
 
 const RightMenuItemCompetitionStyled = styled.span`
@@ -64,6 +58,5 @@ export {
   RightMenuItemCountNumberStyled,
   RightMenuItemPayoutTextStyled,
   RightMenuItemPayoutNumberStyled,
-  RightMenuItemHeaderSeparatorStyled,
   RightMenuItemFooterSeparatorStyled
 };

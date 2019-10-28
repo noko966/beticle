@@ -1,30 +1,27 @@
 import React from "react";
 import {
-  TeamNameAndScoreContainerStyled,
-  ScoreContainerStyled,
-  TeamNameContainerStyled,
   TeamHomeStyled,
   TeamAwayStyled,
   ScoreSeparatorStyled,
   ScoreHomeStyled,
   ScoreAwayStyled
 } from "./Score.styled";
-import { Flex } from "../Flex";
+import { Flex, Box } from "@rebass/grid";
 
 const Score = ({ HT, AT, scoreHT, scoreAT }) => {
   return (
-    <TeamNameAndScoreContainerStyled>
-      <TeamNameContainerStyled>
+    <Flex flexDirection="column">
+      <Flex mb={2}>
         <TeamHomeStyled>{HT}</TeamHomeStyled>
         <ScoreSeparatorStyled></ScoreSeparatorStyled>
         <TeamAwayStyled>{AT}</TeamAwayStyled>
-      </TeamNameContainerStyled>
-      <ScoreContainerStyled>
+      </Flex>
+      <Flex mb={2}>
         <ScoreHomeStyled>{scoreHT}</ScoreHomeStyled>
         <ScoreSeparatorStyled>:</ScoreSeparatorStyled>
         <ScoreAwayStyled>{scoreAT}</ScoreAwayStyled>
-      </ScoreContainerStyled>
-    </TeamNameAndScoreContainerStyled>
+      </Flex>
+    </Flex>
   );
 };
 

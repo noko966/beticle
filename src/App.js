@@ -32,13 +32,14 @@ import { Text } from "./components/Text";
 
 import { Competition } from "./components/Competition";
 import { MiniCompetition } from "./components/MiniCompetition";
+import { withTheme } from "styled-components";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <GlobalStyles />
-        <Flex width={1}>
+        <Flex width={1} bg={this.props.theme.Layout.bg}>
           <Box width="390px">
             <Sidebar>
               <SidebarItem>text</SidebarItem>
@@ -136,4 +137,4 @@ SECOND PART "
   }
 }
 
-export default App;
+export default withTheme(App);

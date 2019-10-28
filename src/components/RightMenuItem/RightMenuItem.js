@@ -1,5 +1,7 @@
 import React from "react";
 import { Flex } from "@rebass/grid";
+import { Separator } from "../Separator";
+
 import {
   RightMenuItemContainerStyled,
   RightMenuItemCompetitionStyled,
@@ -9,7 +11,6 @@ import {
   RightMenuItemCountNumberStyled,
   RightMenuItemPayoutTextStyled,
   RightMenuItemPayoutNumberStyled,
-  RightMenuItemHeaderSeparatorStyled,
   RightMenuItemFooterSeparatorStyled
 } from "./RightMenuItem.styled";
 
@@ -27,7 +28,7 @@ const RightMenuItem = ({ competition, type, winner, itemCount, ammount }) => {
         </Flex>
       </Flex>
       <Flex mb="8px">
-        <RightMenuItemHeaderSeparatorStyled />
+        <Separator />
       </Flex>
       <Flex mb="8px">
         <RightMenuItemWinnerStyled>{winner}</RightMenuItemWinnerStyled>

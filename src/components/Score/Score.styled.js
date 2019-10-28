@@ -1,24 +1,5 @@
 import styled from "styled-components";
 
-const TeamNameAndScoreContainerStyled = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-`;
-
-const TeamNameContainerStyled = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const ScoreContainerStyled = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-`;
-
 const TeamHomeStyled = styled.span`
   font-size: 18px;
   font-weight: 500;
@@ -68,9 +49,6 @@ const ScoreSeparatorStyled = styled.span`
 `;
 
 export {
-  TeamNameAndScoreContainerStyled,
-  ScoreContainerStyled,
-  TeamNameContainerStyled,
   ScoreSeparatorStyled,
   ScoreAwayStyled,
   ScoreHomeStyled,

@@ -4,11 +4,11 @@ import {
   CompetionNameStyled,
   CompetionTypeStyled,
   CompetitionOddsGroupStyled,
-  CompetitionSeparator,
   CompetitionStatus,
   CompetitionMarketCap
 } from "./Competition.styled";
 import { Score } from "../Score";
+import { Separator } from "../Separator";
 import { OddGroup } from "../OddGroup";
 import { Flex } from "@rebass/grid";
 
@@ -29,7 +29,7 @@ const Competition = ({
 }) => {
   return (
     <CompetionContainerStyled>
-      <Flex alignItems='center' mb='8px'>
+      <Flex alignItems="center" mb={2}>
         <Flex width={1 / 2}>
           <CompetionNameStyled>{name}</CompetionNameStyled>
         </Flex>
@@ -37,11 +37,11 @@ const Competition = ({
           <CompetionTypeStyled>{type}</CompetionTypeStyled>
         </Flex>
       </Flex>
-      <Flex>
+      <Flex mb={2}>
         <Flex flex="1 1 auto" flexDirection="column">
           <Score HT={HT} AT={AT} scoreHT={scoreHT} scoreAT={scoreAT} />
-          <CompetitionSeparator />
-          <Flex>
+          <Separator />
+          <Flex pt={2}>
             <Flex width={1 / 2} justifyContent="flex-end">
               <CompetitionStatus>{status}</CompetitionStatus>
             </Flex>
