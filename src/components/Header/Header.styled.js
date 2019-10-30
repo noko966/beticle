@@ -8,8 +8,19 @@ const HeaderLogo = styled.div`
   background-size: 80px 80px;
 `;
 
+const HeaderWrapper = styled.div`
+  background-color: #151516;
+  width: 100%;
+  height:90px;
+  border-bottom: 2px solid #4a4a4a;
+  padding: 0 15px;
+  display:flex;
+  align-items:center;
+`;
+
 
 export {
   HeaderLogo,
+  HeaderWrapper
 
 };

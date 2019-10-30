@@ -9,9 +9,7 @@ const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
     font-family: 'Roboto', sans-serif !important;
   }
-  body, html, #root{
-    height: 100%
-  }
+
   *{
     box-sizing:border-box;
   }
@@ -19,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
 
 //components
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
 import { Flex, Box } from "@rebass/grid";
 
 import { SidebarItem } from "./components/SidebarItem";
@@ -36,10 +36,10 @@ import SignInPopup from "./components/SignInPopup";
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{ height: "100%" }}>
+      <div className="App">
         <GlobalStyles />
         <Header />
-        <Flex width={1} bg={this.props.theme.Layout.bg} height="100%">
+        <Flex width={1} bg={this.props.theme.Layout.bg}>
           <Box flex="0 0 390px">
             <SidebarItem text="sidebar item"></SidebarItem>
             <SidebarItem active={true} text="sidebar item"></SidebarItem>
@@ -63,11 +63,15 @@ class App extends Component {
                   ATPercentage="20%"
                   ATFactor="20"
                   deltaUp={true}
+                  comment='18+ teams'
+                  marketCap='500$'
+                  date='10/12/19'
+
                 />
               </Box>
               <Box width="15px"></Box>
               <Box width={1 / 2}>
-                <MiniCompetition
+              <MiniCompetition
                   type="buy"
                   subName="subName"
                   name="Competition name"
@@ -78,6 +82,10 @@ class App extends Component {
                   ATPercentage="20%"
                   ATFactor="20"
                   deltaUp={true}
+                  comment='18+ teams'
+                  marketCap='500$'
+                  date='10/12/19'
+
                 />
               </Box>
             </Flex>
@@ -121,7 +129,7 @@ SECOND PART "
               <Order type='buy' name='Order name'/>
             </Competition>
           </Box>
-          <Box width="420px">
+          <Box flex="0 0 420px">
             <RightMenuItem
               competition="competition name"
               type="buy"
@@ -131,6 +139,7 @@ SECOND PART "
             />
           </Box>
         </Flex>
+        <Footer/>
         {/* <SignInPopup /> */}
       </div>
     );

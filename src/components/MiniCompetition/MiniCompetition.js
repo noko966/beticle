@@ -7,10 +7,12 @@ import {
   MiniCompetitionTeamNameStyled,
   MiniCompetitionFactorStyled,
   MiniCompetitionPercentageStyled,
-  MiniCompetitionArrowStyled
+  MiniCompetitionArrowStyled,
+  MiniCompetitionCommentStyled,
+  MiniCompetitionFooterTextStyled
 } from "./MiniCompetition.styled";
 import { Flex, Box } from "@rebass/grid";
-import {Separator} from '../Separator'
+import { Separator } from "../Separator";
 
 const MiniCompetition = ({
   type,
@@ -24,9 +26,11 @@ const MiniCompetition = ({
   ATPercentage,
   ATFactor,
   deltaUp,
-  deltaDown
+  deltaDown,
+  comment,
+  date,
+  marketCap
 }) => {
-  console.log(theme);
   return (
     <MiniCompetitionStyled>
       <Flex mb={2}>
@@ -52,7 +56,7 @@ const MiniCompetition = ({
             <MiniCompetitionFactorStyled>
               {HTFactor}
             </MiniCompetitionFactorStyled>
-            {(deltaUp || deltaDown) && <MiniCompetitionArrowStyled/>}
+            {(deltaUp || deltaDown) && <MiniCompetitionArrowStyled />}
           </Flex>
         </Box>
         <Box width={1 / 2} mb={3}>
@@ -66,11 +70,28 @@ const MiniCompetition = ({
             <MiniCompetitionFactorStyled>
               {ATFactor}
             </MiniCompetitionFactorStyled>
-            {(deltaUp || deltaDown) && <MiniCompetitionArrowStyled/>}
+            {(deltaUp || deltaDown) && <MiniCompetitionArrowStyled />}
           </Flex>
         </Box>
       </Flex>
-      <Separator/>
+      <Flex mb="15px" justifyContent="flex-end">
+        <MiniCompetitionCommentStyled>{comment}</MiniCompetitionCommentStyled>
+      </Flex>
+      <Separator />
+      <Flex mt='10px'>
+        <Box width={1 / 2}>
+          <MiniCompetitionFooterTextStyled>
+            {date}
+          </MiniCompetitionFooterTextStyled>
+        </Box>
+        <Box width={1 / 2} textAlign="right">
+          {marketCap && (
+            <MiniCompetitionFooterTextStyled>
+              market Cap {marketCap}
+            </MiniCompetitionFooterTextStyled>
+          )}
+        </Box>
+      </Flex>
     </MiniCompetitionStyled>
   );
 };

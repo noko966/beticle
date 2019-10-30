@@ -72,6 +72,12 @@ const MiniCompetitionArrowStyled = styled.i`
   }
 `;
 
+const MiniCompetitionFooterTextStyled = styled.span`
+  color: #9b9b9b;
+  font-size: 17px;
+  font-weight: bold;
+`;
+
 export {
   MiniCompetitionStyled,
   MiniCompetitionNameStyled,
@@ -81,5 +87,6 @@ export {
   MiniCompetitionPercentageStyled,
   MiniCompetitionFactorStyled,
   MiniCompetitionArrowStyled,
-  MiniCompetitionCommentStyled
+  MiniCompetitionCommentStyled,
+  MiniCompetitionFooterTextStyled
 };
