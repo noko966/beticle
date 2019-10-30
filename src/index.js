@@ -4,6 +4,18 @@ import App from "./App";
 import { ThemeProvider } from "styled-components";
 
 const Theme = {
+  colors:{
+    mainBg:"#151516",
+    widget:"#1f2022",
+    akcent:"#0264fb",
+    buyAkcent:"#6c9d3a",
+    textSec: '#4a4a4a',
+    sidebarText: '#9b9b9b',
+    white: '#fff'
+  },
+  header:{
+    height:'90px'
+  },
   space: [ 0, 6, 12, 24, 32 ],
   SidebarItem: {
     height: "62px",

@@ -14,7 +14,7 @@ const OddGroup = ({ name, odds }) => {
         {odds &&
           odds.map(odd => {
             return (
-              <Odd price={odd.price} type={odd.type} factor={odd.factor} />
+              <Odd key={odd.id} price={odd.price} type={odd.type} factor={odd.factor} />
             );
           })}
       </OddContainerStyled>

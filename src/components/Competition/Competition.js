@@ -42,6 +42,7 @@ const Competition = ({
           <Score HT={HT} AT={AT} scoreHT={scoreHT} scoreAT={scoreAT} />
           <Separator />
           <Flex pt={2}>
+            
             <Flex width={1 / 2} justifyContent="flex-end">
               <CompetitionStatus>{status}</CompetitionStatus>
             </Flex>

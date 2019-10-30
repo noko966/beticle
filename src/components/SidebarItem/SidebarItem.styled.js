@@ -1,27 +1,42 @@
 import styled from "styled-components";
 
+const Style = p => {
+  let style = "";
+  switch (p.type) {
+    case "inner":
+      style = `background-color:${p.theme.colors.widget}; color:${p.theme.colors.sidebarText}`;
+      break;
+    default:
+      style = `background-color:${p.theme.colors.widget}; color:${p.theme.colors.sidebarText}`;
+      break;
+  }
+
+  return style;
+};
+
 const SidebarItemStyled = styled.a`
+display:flex;
+align-items:center;
   width: 100%;
-  height: ${(p) => p.height || p.theme.SidebarItem.height};
-  padding: 0 ${(p) => p.spacing || p.theme.SidebarItem.spacing};
-  background-color: ${(p) =>
-    p.nested ? p.theme.SidebarItemNested.bg : p.theme.SidebarItem.bg};
-  color: ${(p) =>
-    p.nested ? p.theme.SidebarItemNested.color : p.theme.SidebarItem.color};
-  display: flex;
-  align-items: center;
-  transition: background-color 0.2s, color 0.2s;
-  cursor: pointer;
-  &:hover {
-    background-color: ${(p) =>
-      p.nested
-        ? p.theme.SidebarItemNested.bgHover
-        : p.theme.SidebarItem.bgHover};
-    color: ${(p) =>
-      p.nested
-        ? p.theme.SidebarItemNested.colorHover
-        : p.theme.SidebarItem.colorHover};
+  height: 62px;
+  padding: 0 ${p => p.theme.space[2]}px;
+  ${p => Style(p)}
+
+  ${p => {return p.active ? `color: ${p.theme.colors.akcent}` : ``}}
+`;
+
+const SidebarFactorStyled = styled.span`
+  display:block;
+  width:100%;
+  height:23px;
+  line-height:23px;
+  border: 1px solid currentColor;
+  border-radius:2px;
+  text-align:center;
+  
+  &:empty{
+    display:none;
   }
 `;
 
-export { SidebarItemStyled };
+export { SidebarItemStyled, SidebarFactorStyled };

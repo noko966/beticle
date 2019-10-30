@@ -9,47 +9,45 @@ const GlobalStyles = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
     font-family: 'Roboto', sans-serif !important;
   }
+  body, html, #root{
+    height: 100%
+  }
   *{
     box-sizing:border-box;
   }
 `;
 
 //components
+import Header from "./components/Header/Header";
 import { Flex, Box } from "@rebass/grid";
-import { Odd } from "./components/Odd";
-import { Score } from "./components/Score";
-import { Team } from "./components/Team";
-import { Button } from "./components/Button";
-import { Sidebar } from "./components/Sidebar";
+
 import { SidebarItem } from "./components/SidebarItem";
 
-import { Badge } from "./components/Badge";
-
 import { RightMenuItem } from "./components/RightMenuItem";
-import { SellBuy } from "./components/SellBuy";
-
-import { Text } from "./components/Text";
+import { Order } from "./components/Order";
 
 import { Competition } from "./components/Competition";
 import { MiniCompetition } from "./components/MiniCompetition";
 import { withTheme } from "styled-components";
 
+//popups
+import SignInPopup from "./components/SignInPopup";
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ height: "100%" }}>
         <GlobalStyles />
-        <Flex width={1} bg={this.props.theme.Layout.bg}>
-          <Box width="390px">
-            <Sidebar>
-              <SidebarItem>text</SidebarItem>
-              <SidebarItem nested={true}>text</SidebarItem>
-              <SidebarItem nested={true}>text</SidebarItem>
-              <SidebarItem nested={true}>text</SidebarItem>
-              <SidebarItem nested={true}>text</SidebarItem>
-              <SidebarItem>text</SidebarItem>
-              <SidebarItem>text</SidebarItem>
-            </Sidebar>
+        <Header />
+        <Flex width={1} bg={this.props.theme.Layout.bg} height="100%">
+          <Box flex="0 0 390px">
+            <SidebarItem text="sidebar item"></SidebarItem>
+            <SidebarItem active={true} text="sidebar item"></SidebarItem>
+            <SidebarItem text="sidebar item"></SidebarItem>
+            <SidebarItem text="sidebar item"></SidebarItem>
+            <SidebarItem text="sidebar item"></SidebarItem>
+
+            <SidebarItem text="sidebar item" factor="1.5"></SidebarItem>
           </Box>
           <Box px={2} flex="1 0 auto">
             <Flex mb={2}>
@@ -119,7 +117,8 @@ SECOND PART "
 SECOND PART "
               oddsSell={[{ price: 10, factor: 20 }, { price: 10, factor: 20 }]}
               oddsSellName="NAME OF THE HOME TEAM SECOND PART ">
-              <SellBuy />
+              <Order type='sell' name='Order name' returnn='20' lagability='30'/>
+              <Order type='buy' name='Order name'/>
             </Competition>
           </Box>
           <Box width="420px">
@@ -132,6 +131,7 @@ SECOND PART "
             />
           </Box>
         </Flex>
+        {/* <SignInPopup /> */}
       </div>
     );
   }

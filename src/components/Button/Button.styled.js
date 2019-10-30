@@ -1,35 +1,46 @@
 import styled from "styled-components";
 
-const Height = p => {
-  let height = "";
-  switch (p.size) {
-    case "large":
-      height = "height:40px";
+const Style = p => {
+  let style = "";
+  switch (p.type) {
+    case "transparent":
+      style = `height:50px; background-color: transparent; border-color: transparent; color:${p.theme.colors.textSec}`;
+      break;
+    case "transparentPrimaryBordered":
+      style = `height:50px; background-color: transparent; border-color: ${p.theme.colors.akcent}; color:${p.theme.colors.akcent}`;
       break;
     case "small":
-      height = "height:30px";
+      style = "height:30px";
       break;
+    case "popup":
+        style = `height:60px; background-color: ${p.theme.colors.akcent}; border-color: ${p.theme.colors.akcent}; color:${p.theme.colors.white}`;
+        break;
+    case "orderBuy":
+        style = `height:40px; background-color: #fff; border-color: #fff; text-transform:uppercase; color:${p.theme.colors.akcent};`;
+        break;
     default:
-      height = "height:30px";
+      
       break;
   }
 
-  return height;
+  return style;
 };
 
 const ButtonStyled = styled.button`
-  background-color: ${p => p.bg || '#0264fb'};
-  color: ${p => p.color || '#fff'};
+  border: 0;
+  border:1px solid;
   border-radius: 5px;
   appearance: none;
-  ${p => Height(p)}
+  
   font-size: 18px;
   font-weight: 500;
   padding: 0 24px;
   font-size: 18px;
   font-weight: 500;
-  border: 0;
+  width:auto;
   outline: 0;
+  ${p => Style(p)}
+  
   cursor: pointer;
 `;
 
